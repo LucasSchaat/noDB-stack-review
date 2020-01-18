@@ -146,22 +146,24 @@ class App extends Component {
             employees={employees}
 						filterEmployees={this.filterEmployees}
             />
-					<AllEmployees
-						filteredEmployees={filteredEmployees}
-						selectEmployee={this.selectEmployee}
-            />
-					<br />
-					<br />
-					<EmployeeHighlight
-            addEmployee={this.addEmployee}
-						editEmployee={this.editEmployee}
-						deleteEmployee={this.deleteEmployee}
-						firstName={selectedFirstName}
-						lastName={selectedLastName}
-						id={selectedId}
-						email={selectedEmail}
-						gender={selectedGender}
-					/>
+					<div className='main-container'>
+						<AllEmployees
+							filteredEmployees={filteredEmployees}
+							selectEmployee={this.selectEmployee}
+						/>
+						<br />
+						<br />
+						<EmployeeHighlight
+							addEmployee={this.addEmployee}
+							editEmployee={this.editEmployee}
+							deleteEmployee={this.deleteEmployee}
+							firstName={selectedFirstName}
+							lastName={selectedLastName}
+							id={selectedId}
+							email={selectedEmail}
+							gender={selectedGender}
+						/>
+					</div>
 				</div>
 			);
 		} else {

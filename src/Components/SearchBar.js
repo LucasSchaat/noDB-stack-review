@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import '../App.css'
 
 class SearchBar extends Component {
     constructor(){
@@ -29,17 +30,28 @@ class SearchBar extends Component {
 
 	render() {
 		return (
-            <div>
-                <select value={this.state.filterKey} onChange={this.selectFilterKey} name='filterKey'>
-                    <option value=''>Select Category</option>
-                    <option value='firstName'>First Name</option>
-                    <option value='lastName'>Last Name</option>
-                    <option value='email'>Email</option>
-                    <option value='gender'>Gender</option>
-                </select>
-                <input name='input' value={this.state.input} onChange={e=>this.filterEmployeeList(e)}/>
-            </div>
-        );
+			<div className="search-bar-container">
+				<div>
+					<select
+						value={this.state.filterKey}
+						onChange={this.selectFilterKey}
+						name="filterKey"
+					>
+						<option value="">Select Category</option>
+						<option value="firstName">First Name</option>
+						<option value="lastName">Last Name</option>
+						<option value="email">Email</option>
+						<option value="gender">Gender</option>
+					</select>
+				</div>
+				<input
+					name="input"
+					value={this.state.input}
+					onChange={e => this.filterEmployeeList(e)}
+					className='search-input'
+				/>
+			</div>
+		);
 	}
 }
 

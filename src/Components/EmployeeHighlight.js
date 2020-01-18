@@ -93,39 +93,41 @@ class EmployeeHighlights extends Component {
 		if (!editing) {
 			if (this.props.id === 0) {
 				return (
-					<div>
+					<div className='no-display-highlight'>
 						<h2>There are no employees that match that filter!</h2>
 					</div>
 				);
 			} else {
 				return (
-					<div className="border">
-						<h2>
-							{firstName} {lastName}
-						</h2>
-						<p>Employee Id: {id}</p>
-						<p>Email: {email}</p>
-						<p>Gender: {gender}</p>
-						<button onClick={this.flipEdit}>Edit Info</button>
-						<button onClick={() => this.props.deleteEmployee(id)}>
-							Delete
-						</button>
-						<button onClick={() => this.addEmployee(this.state)}>
-							Add A New Employee
-						</button>
+					<div className="outside-container">
+						<div>
+							<h2>
+								{firstName} {lastName}
+							</h2>
+							<p>Employee Id: {id}</p>
+							<p>Email: {email}</p>
+							<p>Gender: {gender}</p>
+							<button onClick={this.flipEdit}>Edit Info</button>
+							<button onClick={() => this.props.deleteEmployee(id)}>
+								Delete
+							</button>
+							<button onClick={() => this.addEmployee(this.state)}>
+								Add A New Employee
+							</button>
+						</div>
 					</div>
 				);
 			}
 		} else {
 			if (this.props.id === 0) {
 				return (
-					<div>
+					<div className="no-display-highlight">
 						<h2>There are no employees that match that filter!</h2>
 					</div>
 				);
 			} else if (this.state.adding){
 				return (
-					<div className="border">
+					<div className="outside-container">
 						<div>
 							<input
 								name="firstNameInput"
@@ -166,7 +168,7 @@ class EmployeeHighlights extends Component {
 				);
 			} else {
                 return (
-                    <div className="border">
+                    <div className="outside-container">
                         <div>
                             <input
                                 name="firstNameInput"
