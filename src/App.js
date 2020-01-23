@@ -12,8 +12,8 @@ class App extends Component {
 		this.state = {
 			employees: [],
 			filteredEmployees: [],
-			selectedFirstName: "",
-			selectedLastName: "",
+			selectedfirst: "",
+			selectedlast: "",
 			selectedId: 0,
 			selectedEmail: "",
 			selectedGender: ""
@@ -27,8 +27,8 @@ class App extends Component {
 				this.setState({
 					employees: res.data,
 					filteredEmployees: res.data,
-					selectedFirstName: res.data[0].firstName,
-					selectedLastName: res.data[0].lastName,
+					selectedfirst: res.data[0].first,
+					selectedlast: res.data[0].last,
 					selectedId: res.data[0].id,
 					selectedEmail: res.data[0].email,
 					selectedGender: res.data[0].gender
@@ -42,8 +42,8 @@ class App extends Component {
 		if (filteredList.length) {
 			this.setState({
 				filteredEmployees: filteredList,
-				selectedFirstName: filteredList[0].firstName,
-				selectedLastName: filteredList[0].lastName,
+				selectedfirst: filteredList[0].first,
+				selectedlast: filteredList[0].last,
 				selectedId: filteredList[0].id,
 				selectedEmail: filteredList[0].email,
 				selectedGender: filteredList[0].gender
@@ -51,8 +51,8 @@ class App extends Component {
 		} else {
 			this.setState({
 				filteredEmployees: filteredList,
-				selectedFirstName: "",
-				selectedLastName: "",
+				selectedfirst: "",
+				selectedlast: "",
 				selectedId: 0,
 				selectedEmail: "",
 				selectedGender: ""
@@ -62,8 +62,8 @@ class App extends Component {
 
 	selectEmployee = employee => {
 		this.setState({
-			selectedFirstName: employee.firstName,
-			selectedLastName: employee.lastName,
+			selectedfirst: employee.first,
+			selectedlast: employee.last,
 			selectedId: employee.id,
 			selectedEmail: employee.email,
 			selectedGender: employee.gender
@@ -76,8 +76,8 @@ class App extends Component {
       this.setState({
 				employees: res.data,
 				filteredEmployees: res.data,
-				selectedFirstName: res.data[0].firstName,
-				selectedLastName: res.data[0].lastName,
+				selectedfirst: res.data[0].first,
+				selectedlast: res.data[0].last,
 				selectedId: res.data[0].id,
 				selectedEmail: res.data[0].email,
 				selectedGender: res.data[0].gender
@@ -92,8 +92,8 @@ class App extends Component {
 				this.setState({
 					employees: res.data,
 					filteredEmployees: res.data,
-					selectedFirstName: res.data[0].firstName,
-					selectedLastName: res.data[0].lastName,
+					selectedfirst: res.data[0].first,
+					selectedlast: res.data[0].last,
 					selectedId: res.data[0].id,
 					selectedEmail: res.data[0].email,
 					selectedGender: res.data[0].gender
@@ -110,8 +110,8 @@ class App extends Component {
 					this.setState({
 						employees: res.data,
 						filteredEmployees: res.data,
-						selectedFirstName: res.data[0].firstName,
-						selectedLastName: res.data[0].lastName,
+						selectedfirst: res.data[0].first,
+						selectedlast: res.data[0].last,
 						selectedId: res.data[0].id,
 						selectedEmail: res.data[0].email,
 						selectedGender: res.data[0].gender
@@ -119,8 +119,8 @@ class App extends Component {
 				} else {
 					this.setState({
 						filteredEmployees: res.data,
-						selectedFirstName: "",
-						selectedLastName: "",
+						selectedfirst: "",
+						selectedlast: "",
 						selectedId: 0,
 						selectedEmail: "",
 						selectedGender: ""
@@ -133,8 +133,8 @@ class App extends Component {
 		const {
 			employees,
 			filteredEmployees,
-			selectedFirstName,
-			selectedLastName,
+			selectedfirst,
+			selectedlast,
 			selectedId,
 			selectedEmail,
 			selectedGender
@@ -157,8 +157,8 @@ class App extends Component {
 							addEmployee={this.addEmployee}
 							editEmployee={this.editEmployee}
 							deleteEmployee={this.deleteEmployee}
-							firstName={selectedFirstName}
-							lastName={selectedLastName}
+							first={selectedfirst}
+							last={selectedlast}
 							id={selectedId}
 							email={selectedEmail}
 							gender={selectedGender}
